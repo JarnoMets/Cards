@@ -1,0 +1,46 @@
+{
+  "title": "Manille",
+  "team1": "Team 1",
+  "team2": "Team 2",
+  "team1Players": "{p1} & {p2}",
+  "team2Players": "{p1} & {p2}",
+  "pointsPlaceholder": "Points (0-60)",
+  "trumpLabel": "Trump Suit",
+  "multiplierLabel": "Multiplier",
+  "scorePreview": "Score Preview",
+  "total": "Total",
+  "round": "Round",
+  "targetScore": "Target Score",
+  "trumpSuits": {
+    "hearts": "♥ Hearts",
+    "diamonds": "♦ Diamonds",
+    "clubs": "♣ Clubs",
+    "spades": "♠ Spades",
+    "no_trump": "No Trump (×2)"
+  },
+  "multipliers": {
+    "normal": "Normal",
+    "along": "Went Along (×2)",
+    "against": "Went Against (×4)"
+  },
+  "cardValues": {
+    "title": "Card Values",
+    "manille": "10 (Manille): 5 pts",
+    "ace": "Ace: 4 pts",
+    "king": "King: 3 pts",
+    "queen": "Queen: 2 pts",
+    "jack": "Jack: 1 pt",
+    "others": "9, 8, 7: 0 pts",
+    "total": "Total per round: 60"
+  },
+  "errors": {
+    "playerCount": "Manille requires exactly four players.",
+    "pointsRange": "Team 1 points must be between 0 and 60.",
+    "pointsRequired": "Please enter Team 1's points.",
+    "trumpRequired": "Please select a trump suit.",
+    "multiplierInvalid": "Invalid multiplier. Use 1, 2, or 4.",
+    "multiplierMax": "Maximum multiplier is 4 (no trump + going along cannot stack).",
+    "missingGame": "Game data is not available yet.",
+    "submitFailed": "Failed to submit round. Please try again."
+  }
+}

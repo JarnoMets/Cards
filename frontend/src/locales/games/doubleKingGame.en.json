@@ -1,0 +1,37 @@
+{
+  "title": "Double King",
+  "doubleKingTitle": "Double King",
+  "gameSelection": "Select Game",
+  "games": {
+    "noTricks": "No Tricks",
+    "noHearts": "No Hearts",
+    "noKingsJacks": "No Kings/Jacks",
+    "noQueens": "No Queens",
+    "noKingHearts": "No King of hearts",
+    "not7thLast": "Not 7th/Last",
+    "winTricks": "Trump Choice"
+  },
+  "errors": {
+    "submitFailed": "Failed to submit round",
+    "invalidScores": "Invalid scores for this game.",
+    "invalidTotal": "Invalid total: {total}. Must sum to {expected}."
+  },
+  "gameDetails": {
+    "title": "Game details",
+    "unselected": "Pick a mini-game above to see scoring hints.",
+    "rangeLabel": "Per player",
+    "totalLabel": "Round total",
+    "scoreLabel": "Score effect",
+    "remaining": "{plays} plays left",
+    "trumpPlayer": "Trump chooser",
+    "descriptions": {
+      "noTricks": "Avoid taking any tricks—each one costs you points.",
+      "noHearts": "Steer clear of hearts. Every heart captured adds penalty points.",
+      "noKingsJacks": "Keep Kings and Jacks out of your pile to dodge the penalties.",
+      "noQueens": "Every captured Queen hurts, so try to dump them early.",
+      "noKingHearts": "Protect yourself from the King of Hearts—whoever gets it pays dearly.",
+      "not7thLast": "Don't win the 7th or last trick. Give them to someone else.",
+      "winTricks": "{player} chooses trump. Win tricks to bank the bonus."
+    }
+  }
+}

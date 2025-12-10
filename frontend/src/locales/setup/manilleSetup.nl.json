@@ -1,0 +1,9 @@
+{
+  "errorMinPlayers": "Precies vier spelers zijn vereist",
+  "errorUniqueNames": "Spelernamen moeten uniek zijn",
+  "noGames": "Nog geen Manille spellen",
+  "eyebrow": "Vorm teams en tel je punten",
+  "settings": "Spelinstellingen",
+  "targetScoreLabel": "Doelscore",
+  "targetScoreHint": "Eerste team dat deze score bereikt wint (standaard: 101)"
+}

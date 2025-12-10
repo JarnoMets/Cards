@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: cards
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: jarn/card-scorer-backend:latest
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+        env:
+        - name: RUST_LOG
+          value: "info"
+        - name: DATABASE_URL
+          value: "postgres://postgresuser:postgrespwd@postgres.postgres.svc.cluster.local:5432/postgresdb"
+        # Email notification settings - using Brevo SMTP
+        - name: EMAIL_ENABLED
+          value: "true"
+        - name: SMTP_HOST
+          value: "smtp-relay.brevo.com"
+        - name: SMTP_PORT
+          value: "587"
+        - name: SMTP_USE_TLS
+          value: "true"
+        - name: SMTP_USER
+          value: "9c7995001@smtp-brevo.com"
+        - name: SMTP_PASS
+          value: "xsmtpsib-6d9d8e14f737f7e485b03ebce213e227268ac637f973a48c55c2871609c1c8b6-fuLKy3FI8QSgap8R"
+        - name: EMAIL_FROM
+          value: "cards@jarnomets.com"
+        - name: EMAIL_TO
+          value: "jarno.mets@gmail.com"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+      initContainers:
+      - name: wait-for-db
+        image: busybox:1.35
+        command: ['sh', '-c', 'until nc -z postgres.postgres.svc.cluster.local 5432; do echo waiting for db; sleep 2; done;']
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: cards
+  labels:
+    app: backend
+spec:
+  selector:
+    app: backend
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP

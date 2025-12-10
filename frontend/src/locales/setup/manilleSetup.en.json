@@ -1,0 +1,9 @@
+{
+  "errorMinPlayers": "Exactly four players are required",
+  "errorUniqueNames": "Player names must be unique",
+  "noGames": "No Manille games yet",
+  "eyebrow": "Team up and count your points",
+  "settings": "Game Settings",
+  "targetScoreLabel": "Target Score",
+  "targetScoreHint": "First team to reach this score wins (default: 101)"
+}

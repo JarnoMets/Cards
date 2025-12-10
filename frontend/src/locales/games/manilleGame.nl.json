@@ -1,0 +1,46 @@
+{
+  "title": "Manille",
+  "team1": "Team 1",
+  "team2": "Team 2",
+  "team1Players": "{p1} & {p2}",
+  "team2Players": "{p1} & {p2}",
+  "pointsPlaceholder": "Punten (0-60)",
+  "trumpLabel": "Troef",
+  "multiplierLabel": "Verhoging",
+  "scorePreview": "Score Vooruitblik",
+  "total": "Totaal",
+  "round": "Ronde",
+  "targetScore": "Doelscore",
+  "trumpSuits": {
+    "hearts": "♥ Harten",
+    "diamonds": "♦ Ruiten",
+    "clubs": "♣ Klaveren",
+    "spades": "♠ Schoppen",
+    "no_trump": "Zonder Troef (×2)"
+  },
+  "multipliers": {
+    "normal": "Normaal",
+    "along": "Meegaan (×2)",
+    "against": "Tegengaan (×4)"
+  },
+  "cardValues": {
+    "title": "Kaartwaarden",
+    "manille": "10 (Manille): 5 ptn",
+    "ace": "Aas: 4 ptn",
+    "king": "Heer: 3 ptn",
+    "queen": "Vrouw: 2 ptn",
+    "jack": "Boer: 1 pt",
+    "others": "9, 8, 7: 0 ptn",
+    "total": "Totaal per ronde: 60"
+  },
+  "errors": {
+    "playerCount": "Manille vereist precies vier spelers.",
+    "pointsRange": "Team 1 punten moeten tussen 0 en 60 zijn.",
+    "pointsRequired": "Voer de punten van Team 1 in.",
+    "trumpRequired": "Selecteer een troefkleur.",
+    "multiplierInvalid": "Ongeldige verhoging. Gebruik 1, 2 of 4.",
+    "multiplierMax": "Maximale verhoging is 4 (zonder troef + meegaan kunnen niet gestapeld worden).",
+    "missingGame": "Spelgegevens zijn nog niet beschikbaar.",
+    "submitFailed": "Ronde verzenden mislukt. Probeer het opnieuw."
+  }
+}

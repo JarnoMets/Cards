@@ -1,0 +1,134 @@
+{
+  "title": "Player profile",
+  "searchTitle": "Player search",
+  "header": {
+    "eyebrow": "Player insights",
+    "since": "Active since {date}",
+    "lastSeen": "Last played {date}",
+    "neverPlayed": "No completed games yet"
+  },
+  "actions": {
+    "back": "← Back to leaderboard",
+    "search": "Search players",
+    "refresh": "Refresh data",
+    "openGame": "Open game"
+  },
+  "admin": {
+    "rename": "Rename player",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleteGame": "Delete game",
+    "renameSuccess": "Player renamed in {count} game | Player renamed in {count} games",
+    "renameFailed": "Failed to rename player",
+    "confirmDeleteTitle": "Delete Game?",
+    "confirmDeleteMessage": "This will permanently delete this game and all its data. This action cannot be undone."
+  },
+  "settings": {
+    "title": "Email notifications",
+    "email": "Email address",
+    "emailPlaceholder": "{'name@example.com'}",
+    "notifications": "Receive game results via email",
+    "notificationsHint": "Get notified when a game you played in ends",
+    "save": "Save",
+    "saved": "Settings saved",
+    "error": "Failed to save settings"
+  },
+  "summary": {
+    "totalGames": "Total games",
+    "finishedGames": "Finished games",
+    "inProgress": "In progress",
+    "handsPlayed": "Hands played",
+    "winRate": "Win rate",
+    "averagePlacement": "Average finish",
+    "overallElo": "Rating",
+    "bestMode": "Best mode",
+    "favoriteMode": "Favorite mode",
+    "noGames": "No games yet",
+    "winRateValue": "{value}% wins",
+    "averagePlacementValue": "Place {value}"
+  },
+  "breakdown": {
+    "title": "Game mode breakdown",
+    "games": "Games played",
+    "finished": "finished",
+    "inProgress": "in progress",
+    "wins": "Wins",
+    "rounds": "Hands",
+    "winRate": "Win rate",
+    "winRateNote": "(finished)",
+    "best": "Best finish",
+    "worst": "Worst finish",
+    "points": "Total points",
+    "avgPerHand": "avg/hand",
+    "elo": "Rating",
+    "eloGames": "rated games",
+    "empty": "No games played in this mode yet",
+    "expand": "Show details",
+    "collapse": "Hide details",
+    "comingSoon": "Detailed stats coming soon...",
+    "heartsDetails": "Hearts Statistics",
+    "kingDetails": "King Statistics",
+    "doubleKingDetails": "Double King Statistics",
+    "colorWhistDetails": "Color Whist Statistics",
+    "shootTheMoon": "Shot the Moon",
+    "resetTo100": "Reset at 100",
+    "queenOfSpades": "Queen of Spades",
+    "scoreDistribution": "Round Score Distribution"
+  },
+  "charts": {
+    "eloTrend": {
+      "title": "Rating trend",
+      "subtitle": "Track your skill rating over time",
+      "rating": "Rating",
+      "noData": "Play some rated games to see your trend",
+      "overall": "Overall"
+    },
+    "placementTrend": {
+      "title": "Placement trend",
+      "subtitle": "Lower lines mean better finishes"
+    },
+    "gameMix": {
+      "title": "Game mix",
+      "subtitle": "Distribution across each game mode"
+    }
+  },
+  "tables": {
+    "title": "Game mode breakdown",
+    "columns": {
+      "mode": "Game mode",
+      "games": "Games",
+      "wins": "Wins",
+      "winRate": "Win%",
+      "average": "Avg score",
+      "best": "Best",
+      "worst": "Worst"
+    }
+  },
+  "recentGames": {
+    "title": "Recent games",
+    "empty": "No games found for this player.",
+    "placement": "#{placement} of {total}",
+    "margin": "Margin {value}",
+    "opened": "Played {date}",
+    "you": "you",
+    "filterAll": "All",
+    "filterFinished": "Finished",
+    "filterUnfinished": "In progress",
+    "filterWon": "Won",
+    "page": "Page {current} of {total}"
+  },
+  "search": {
+    "title": "Find any player",
+    "placeholder": "Type at least 2 characters",
+    "helper": "Search across every tracked game name.",
+    "results": "Showing {count} players",
+    "noQuery": "Start typing to search by name.",
+    "noResults": "No players matched that search.",
+    "viewProfile": "View profile"
+  },
+  "errors": {
+    "notFound": "We couldn't find any games for this player.",
+    "loadFailed": "Unable to load this player. Please try again."
+  }
+}

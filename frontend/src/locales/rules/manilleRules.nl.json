@@ -1,0 +1,11 @@
+{
+  "about": "Over Manille",
+  "overview": "Manille is een teamgebaseerd trikspel voor 4 spelers. Spelers 1 & 3 vormen een team tegen Spelers 2 & 4.",
+  "cardRanking": "Kaartrangorde: 10 (Manille) > A > H > V > B > 9 > 8 > 7",
+  "cardPoints": "Kaartpunten",
+  "totalPoints": "Totaal punten per ronde: 60",
+  "trumpChoice": "De deler kiest de troefkleur of speelt zonder troef (punten verdubbeld).",
+  "goingAlong": "Het tegengestelde team kan 'meegaan' om punten te verdubbelen als ze denken meer te scoren.",
+  "goingAgainst": "Het team van de deler kan 'tegengaan' om punten te verviervoudigen (max verhoging is 4).",
+  "targetScore": "Standaard doel: Eerste team dat 101 punten bereikt wint."
+}

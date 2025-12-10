@@ -1,0 +1,63 @@
+{
+  "backToSelection": "← Terug naar Spelselectie",
+  "loading": "Laden...",
+  "error": "Fout",
+  "goHome": "Naar Home",
+  "round": "Ronde",
+  "roundShort": "R",
+  "points": "Punten",
+  "submitRound": "Ronde Bevestigen",
+  "finalTally": "Score",
+  "gameOver": "Spel Afgelopen",
+  "winsWith": "wint met",
+  "ratingChanges": "Ratingwijzigingen",
+  "exitGame": "Spel Verlaten",
+  "deleteGameConfirm": "Spel Verwijderen?",
+  "deleteGameWarning": "Weet je zeker dat je dit spel wilt verwijderen? Dit kan niet ongedaan gemaakt worden.",
+  "cancel": "Annuleren",
+  "delete": "Verwijderen",
+  "playerLabel": "Speler",
+  "playersLabel": "Spelers",
+  "addPlayer": "+ Speler Toevoegen",
+  "selectPlayer": "Selecteer",
+  "removePlayer": "Verwijderen",
+  "startGame": "Spel Starten",
+  "previousGames": "Vorige Spellen",
+  "continuePlaying": "Doorgaan met Spelen",
+  "finalScores": "Eindstanden",
+  "paginationPrev": "< Vorige",
+  "paginationNext": "Volgende >",
+  "paginationPage": "Pagina {page} van {totalPages}",
+  "playerPicker": {
+    "title": "Kies een speler",
+    "searchLabel": "Zoek spelers",
+    "searchPlaceholder": "Typ om een naam te zoeken...",
+    "topList": "Populaire spelers",
+    "noResults": "Geen spelers gevonden.",
+    "confirm": "Gebruik deze naam"
+  },
+  "playerEdit": {
+    "title": "Speler bewerken",
+    "label": "Spelernaam",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "errors": {
+      "emptyName": "Naam mag niet leeg zijn",
+      "generic": "Speler bijwerken mislukt"
+    }
+  },
+  "roundEdit": {
+    "title": "Ronde bewerken",
+    "roundLabel": "Ronde {round}",
+    "hint": "Pas de scores hieronder aan en sla de ronde op.",
+    "cancel": "Annuleren",
+    "save": "Wijzigingen opslaan",
+    "errors": {
+      "generic": "Ronde bijwerken mislukt",
+      "missingGame": "Spelgegevens zijn nu niet beschikbaar"
+    }
+  },
+  "footer": {
+    "bugPrompt": "Bug gevonden?"
+  }
+}

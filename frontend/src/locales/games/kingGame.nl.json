@@ -1,0 +1,39 @@
+{
+  "title": "Kingen",
+  "eyebrow": "Kingen-missielogboek",
+  "loading": "Laden...",
+  "error": "Fout",
+  "goHome": "Naar Huis",
+  "kingTitle": "Kingen",
+  "round": "Ronde",
+  "roundShort": "R",
+  "points": "Punten",
+  "submitRound": "Ronde Indienen",
+  "finalTally": "Eindstand",
+  "gameOver": "Spel Voorbij",
+  "winsWith": "wint met",
+  "exitGame": "Spel Verlaten",
+  "deleteGameConfirm": "Spel Verwijderen?",
+  "deleteGameWarning": "Weet je zeker dat je dit spel wilt verwijderen? Dit kan niet ongedaan worden gemaakt.",
+  "cancel": "Annuleren",
+  "delete": "Verwijderen",
+  "errors": {
+    "submitFailed": "Kon ronde niet indienen.",
+    "invalidScores": "Vul voor elke speler een score in",
+    "scoreRange": "Scores moeten tussen {min} en {max} blijven"
+  },
+  "roundCard": {
+    "title": "Huidige opdracht",
+    "rangeLabel": "Toegestane scores",
+    "scoreLabel": "Score-effect"
+  },
+  "meta": {
+    "round": "Huidige ronde",
+    "roundHint": "Tien opdrachten om te voltooien",
+    "objective": "Opdracht",
+    "objectiveHint": "Volg de rondekaart voor details",
+    "players": "Spelers",
+    "playersHint": "Houd een naam ingedrukt om te wijzigen",
+    "completedRounds": "Genoteerde rondes"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "title": "Leaderboard",
+  "subtitle": "All-time performance across every game you've tracked.",
+  "backButton": "← Back to game selection",
+  "retry": "Try again",
+  "updatedAt": "Updated {date}",
+  "playerStatsTitle": "Top contenders",
+  "noData": "No games recorded yet. Play a few rounds to unlock the leaderboard!",
+  "tabs": {
+    "wins": "Wins",
+    "elo": "Rating",
+    "records": "Records"
+  },
+  "gameFilter": {
+    "all": "All Games",
+    "label": "Game Type"
+  },
+  "boards": {
+    "overall": "All games",
+    "hearts": "Hearts",
+    "king": "King",
+    "doubleKing": "Double King",
+    "colorWhist": "Color Whist",
+    "whist": "Whist",
+    "manille": "Manille"
+  },
+  "boardDescriptions": {
+    "overall": "Combined performance across every tracked game mode.",
+    "hearts": "Avoid hearts, dodge the queen, win the table.",
+    "king": "Ten rounds of tactical swings.",
+    "doubleKing": "Double the contracts, double the bragging rights.",
+    "colorWhist": "Creative contracts and colorful victories.",
+    "whist": "Traditional trick-taking with strategic slams.",
+    "manille": "Team-based trick-taking with point counting."
+  },
+  "tableHeaders": {
+    "player": "Player",
+    "games": "Games",
+    "wins": "Wins",
+    "winRate": "Win%",
+    "average": "Average score",
+    "highest": "Highest score",
+    "lowest": "Lowest score",
+    "elo": "Rating",
+    "change7d": "7d Change"
+  },
+  "winsLabel": "{wins} wins",
+  "averageLabel": "Avg {value}",
+  "winRateLabel": "{value}% win rate",
+  "gamesLabel": "{count} game | {count} games",
+  "topBadge": "Top {count}",
+  "viewFull": "View full ranking",
+  "showFull": "Show all players",
+  "hideFull": "Collapse to top list",
+  "searchPlayers": "Search players",
+  "viewPlayer": "View player profile",
+  "fullRankingTitle": "{board} ranking",
+  "backToOverview": "← Back to leaderboard overview",
+  "filters": {
+    "title": "Filters",
+    "board": "Game mode",
+    "search": "Search player",
+    "searchPlaceholder": "Type a player name...",
+    "minGames": "Minimum games",
+    "clear": "Clear filters",
+    "options": {
+      "none": "All games",
+      "atLeast": "At least {count}"
+    }
+  },
+  "sort": {
+    "label": "Sort by",
+    "wins": "Wins",
+    "winRate": "Win rate",
+    "average": "Average score",
+    "games": "Games played",
+    "name": "Player name",
+    "directionAsc": "Ascending",
+    "directionDesc": "Descending"
+  },
+  "showing": "Showing {count} of {total} players",
+  "records": {
+    "title": "King & Double King records",
+    "subtitle": "Historic highs and lows from every finished game.",
+    "kingHighest": "King — Highest score",
+    "kingLowest": "King — Lowest score",
+    "doubleKingHighest": "Double King — Highest score",
+    "doubleKingLowest": "Double King — Lowest score",
+    "noRecord": "No record yet",
+    "recordLine": "{score} pts",
+    "recordDate": "since {date}",
+    "highestDescription": "Top finishes ranked by score.",
+    "lowestDescription": "Toughest nights ordered by score.",
+    "scoreColumn": "Score",
+    "dateColumn": "Recorded",
+    "viewDetails": "View detailed list",
+    "scopeLabel": "Score type",
+    "detailTitle": "{mode} — {scope}",
+    "detailSubtitle": "Browse every recorded result with filtering and sorting.",
+    "modeLabels": {
+      "king": "King",
+      "double_king": "Double King"
+    },
+    "scopeLabels": {
+      "highest": "Highest scores",
+      "lowest": "Lowest scores"
+    },
+    "detail": {
+      "search": "Search player",
+      "searchPlaceholder": "Filter by player name...",
+      "sort": "Sort by",
+      "score": "Score",
+      "date": "Recorded date",
+      "game": "Game ID",
+      "player": "Player",
+      "back": "← Back to records overview"
+    }
+  }
+}

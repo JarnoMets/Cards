@@ -1,0 +1,305 @@
+/* ============================================================================
+   ANIMATION SYSTEM
+   Conditional animations based on user preferences
+   ============================================================================ */
+
+/* ==========================================================================
+   KEYFRAME DEFINITIONS
+   ========================================================================== */
+
+@keyframes card-hover-float {
+  0%, 100% {
+    transform: translateY(0) rotateY(0);
+  }
+  50% {
+    transform: translateY(-4px) rotateY(2deg);
+  }
+}
+
+@keyframes card-select-pulse {
+  0% {
+    box-shadow: 0 8px 24px rgba(33, 22, 12, 0.12), 0 2px 6px rgba(33, 22, 12, 0.08);
+  }
+  50% {
+    box-shadow: 0 12px 32px rgba(47, 92, 76, 0.25), 0 4px 12px rgba(47, 92, 76, 0.15);
+  }
+  100% {
+    box-shadow: 0 8px 24px rgba(33, 22, 12, 0.12), 0 2px 6px rgba(33, 22, 12, 0.08);
+  }
+}
+
+@keyframes card-flip-in {
+  0% {
+    transform: perspective(1000px) rotateY(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes button-press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(47, 92, 76, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(47, 92, 76, 0.6);
+  }
+}
+
+@keyframes checkmark-draw {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   HOVER EFFECTS (when .animations-hover is present)
+   ========================================================================== */
+
+/* Game card hover - enhanced float effect */
+.animations-hover .game-card:not(:disabled):hover {
+  transform: translateY(-12px);
+}
+
+.animations-hover .game-card:not(:disabled):hover .playing-card {
+  animation: card-hover-float 2s ease-in-out infinite;
+  box-shadow: 0 20px 50px rgba(33, 22, 12, 0.25), 0 8px 16px rgba(33, 22, 12, 0.12);
+}
+
+/* Card suit shimmer on hover */
+.animations-hover .game-card:not(:disabled):hover .card-suit {
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    rgba(255, 200, 150, 0.8) 50%,
+    currentColor 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Button hover glow */
+.animations-hover button.primary:hover:not(:disabled) {
+  box-shadow: 0 4px 15px rgba(47, 92, 76, 0.4);
+  transform: translateY(-2px);
+}
+
+.animations-hover button.secondary:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+/* Game selection button hover in Double King */
+.animations-hover .game-selection-btn:not(:disabled):not(.completed):hover {
+  transform: translateX(4px);
+  background: rgba(47, 92, 76, 0.08);
+}
+
+/* Table row hover highlight */
+.animations-hover .scoreboard tbody tr:hover {
+  background: rgba(47, 92, 76, 0.05);
+}
+
+/* ==========================================================================
+   CARD FLIP ANIMATIONS (when .animations-flip is present)
+   ========================================================================== */
+
+/* Initial load - cards flip in sequentially */
+.animations-flip .game-card {
+  animation: card-flip-in 0.6s ease-out backwards;
+}
+
+.animations-flip .game-card:nth-child(1) { animation-delay: 0.1s; }
+.animations-flip .game-card:nth-child(2) { animation-delay: 0.2s; }
+.animations-flip .game-card:nth-child(3) { animation-delay: 0.3s; }
+.animations-flip .game-card:nth-child(4) { animation-delay: 0.4s; }
+.animations-flip .game-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Game selection grid items appear sequentially */
+.animations-flip .game-selection-btn {
+  animation: fade-in-up 0.4s ease-out backwards;
+}
+
+.animations-flip .game-selection-btn:nth-child(1) { animation-delay: 0.05s; }
+.animations-flip .game-selection-btn:nth-child(2) { animation-delay: 0.1s; }
+.animations-flip .game-selection-btn:nth-child(3) { animation-delay: 0.15s; }
+.animations-flip .game-selection-btn:nth-child(4) { animation-delay: 0.2s; }
+.animations-flip .game-selection-btn:nth-child(5) { animation-delay: 0.25s; }
+.animations-flip .game-selection-btn:nth-child(6) { animation-delay: 0.3s; }
+.animations-flip .game-selection-btn:nth-child(7) { animation-delay: 0.35s; }
+.animations-flip .game-selection-btn:nth-child(8) { animation-delay: 0.4s; }
+.animations-flip .game-selection-btn:nth-child(9) { animation-delay: 0.45s; }
+.animations-flip .game-selection-btn:nth-child(10) { animation-delay: 0.5s; }
+
+/* Modal fade in with scale */
+.animations-flip .modal {
+  animation: fade-in-scale 0.3s ease-out;
+}
+
+.animations-flip .winner-modal {
+  animation: fade-in-scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Cards in scoreboard */
+.animations-flip .scoreboard.card {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+/* ==========================================================================
+   PAGE TRANSITIONS (when .animations-transitions is present)
+   ========================================================================== */
+
+.animations-transitions .page-container {
+  animation: fade-in-up 0.4s ease-out;
+}
+
+.animations-transitions .game-container,
+.animations-transitions .game-shell {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+.animations-transitions .content-container {
+  animation: fade-in-up 0.35s ease-out;
+}
+
+/* Settings sections stagger */
+.animations-transitions .settings-section {
+  animation: fade-in-up 0.4s ease-out backwards;
+}
+
+.animations-transitions .settings-section:nth-child(1) { animation-delay: 0.1s; }
+.animations-transitions .settings-section:nth-child(2) { animation-delay: 0.2s; }
+.animations-transitions .settings-section:nth-child(3) { animation-delay: 0.3s; }
+.animations-transitions .settings-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* ==========================================================================
+   BUTTON PRESS EFFECTS (when .animations-press is present)
+   ========================================================================== */
+
+.animations-press button:active:not(:disabled) {
+  animation: button-press 0.15s ease-out;
+}
+
+.animations-press .game-card:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.animations-press .game-selection-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Toggle switch animation */
+.animations-press .toggle-slider {
+  transition: background 0.3s ease;
+}
+
+.animations-press .toggle-slider::after {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ==========================================================================
+   SELECTION & COMPLETION STATES
+   ========================================================================== */
+
+/* Selected game type glow */
+.animations-hover .game-selection-btn.selected:not(.completed) {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Completed checkmark */
+.animations-flip .game-selection-btn.completed .checkmark {
+  display: inline-block;
+  animation: fade-in-scale 0.3s ease-out;
+}
+
+/* Winner modal emoji bounce */
+.animations-flip .winner-emoji {
+  animation: wiggle 0.5s ease-in-out;
+  animation-delay: 0.3s;
+}
+
+/* ==========================================================================
+   REDUCED MOTION SUPPORT
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

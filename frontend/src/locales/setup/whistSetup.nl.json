@@ -1,0 +1,9 @@
+{
+  "errorMinPlayers": "Er zijn precies vier spelers nodig",
+  "errorUniqueNames": "Spelersnamen moeten uniek zijn",
+  "noGames": "Nog geen wiezen",
+  "eyebrow": "Kies je spellen",
+  "settings": "Spelinstellingen",
+  "passRoundDoubling": "Verdubbelen na pas-ronde",
+  "passRoundDoublingHint": "Als iedereen past, worden de punten van de volgende ronde verdubbeld."
+}

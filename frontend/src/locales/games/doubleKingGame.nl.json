@@ -1,0 +1,37 @@
+{
+  "title": "Dubbel Kingen",
+  "doubleKingTitle": "Dubbel Kingen",
+  "gameSelection": "Selecteer Spel",
+  "games": {
+    "noTricks": "Geen Slagen",
+    "noHearts": "Geen Harten",
+    "noKingsJacks": "Geen Koningen/Boeren",
+    "noQueens": "Geen Dames",
+    "noKingHearts": "Geen Hartenkoning",
+    "not7thLast": "Niet 7e/Laatste",
+    "winTricks": "Troef Kiezen"
+  },
+  "errors": {
+    "submitFailed": "Kan ronde niet indienen",
+    "invalidScores": "Ongeldige punten voor dit spel.",
+    "invalidTotal": "Ongeldig totaal: {total}. Moet optellen tot {expected}."
+  },
+  "gameDetails": {
+    "title": "Spelinformatie",
+    "unselected": "Kies hierboven een minispel om de uitleg te zien.",
+    "rangeLabel": "Per speler",
+    "totalLabel": "Totale som",
+    "scoreLabel": "Score-effect",
+    "remaining": "Nog {plays} keer",
+    "trumpPlayer": "Troefkiezer",
+    "descriptions": {
+      "noTricks": "Vermijd het winnen van slagen—elke slag kost punten.",
+      "noHearts": "Blijf uit de buurt van harten. Elke hartkaart levert strafpunten op.",
+      "noKingsJacks": "Zorg dat koningen en boeren niet bij jou terechtkomen.",
+      "noQueens": "Elke dame is strafpunten deze ronde.",
+      "noKingHearts": "Voorkom dat je de hartenkoning pakt—die is duur.",
+      "not7thLast": "Win niet de 7e of laatste slag. Laat iemand anders ze nemen.",
+      "winTricks": "{player} kiest troef. Win slagen om punten te scoren."
+    }
+  }
+}

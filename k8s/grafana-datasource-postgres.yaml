@@ -1,0 +1,27 @@
+# PostgreSQL datasource for Grafana to connect to the card games database
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasource-postgres-cards
+  namespace: monitoring
+  labels:
+    grafana_datasource: "1"
+data:
+  postgres-cards.yaml: |
+    apiVersion: 1
+    datasources:
+      - name: PostgreSQL - Card Games
+        type: postgres
+        uid: postgres-cards
+        url: postgres.postgres.svc.cluster.local:5432
+        database: postgresdb
+        user: postgresuser
+        secureJsonData:
+          password: postgrespwd
+        jsonData:
+          sslmode: disable
+          maxOpenConns: 5
+          maxIdleConns: 2
+          connMaxLifetime: 14400
+          postgresVersion: 1500
+          timescaledb: false

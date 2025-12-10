@@ -1,0 +1,12 @@
+{
+  "about": "Double King Rules",
+  "rule1": "Double King is played with the same 6 penalty and 4 positive game types as regular King",
+  "rule2": "Each game type can be played 2 times in any order you choose",
+  "rule3": "For 4 players: 6 penalty games × 2 + 4 positive games × 2 = 20 rounds total",
+  "rule4": "For 3 players: 6 penalty games × 2 + 3 positive games × 2 = 18 rounds total",
+  "rule5": "Select which game you want to play before entering scores",
+  "rule6": "Completed games are marked with a checkmark and cannot be selected",
+  "rule7": "Scoring follows the same rules as regular King",
+  "rule8": "Penalty games count negative points, positive games count positive points",
+  "rule9": "The player with the highest total score after all rounds wins"
+}

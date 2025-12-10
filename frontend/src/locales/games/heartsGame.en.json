@@ -1,0 +1,54 @@
+{
+  "title": "Hearts",
+  "eyebrow": "Hearts score log",
+  "loading": "Loading...",
+  "error": "Error",
+  "goHome": "Go Home",
+  "round": "Round",
+  "roundShort": "R",
+  "points": "points",
+  "submitRound": "Submit Round",
+  "finalTally": "Final Tally",
+  "gameOver": "Game Over",
+  "winsWith": "wins with",
+  "exitGame": "Exit Game",
+  "deleteGameConfirm": "Delete Game?",
+  "deleteGameWarning": "Are you sure you want to delete this game? This cannot be undone.",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "passing": {
+    "keep": "Keep cards",
+    "pass": "Pass",
+    "cards": "cards",
+    "toLeft": "to the left",
+    "toRight": "to the right",
+    "across": "across",
+    "positionsClockwise": "{positions} position clockwise | {positions} positions clockwise"
+  },
+  "passingCard": {
+    "title": "Passing phase",
+    "keepBadge": "Hold",
+    "passBadge": "Pass",
+    "keepHeadline": "Hold your cards",
+    "keepDescription": "Keep every card in your hand this round—no cards move between players.",
+    "passHeadline": "Pass {cards} card | Pass {cards} cards",
+    "passDescription": "Pass {cards} card {direction}. Keep it hidden until everyone is ready. | Pass {cards} cards {direction}. Keep them hidden until everyone is ready.",
+    "cardsLabel": "Cards",
+    "directionLabel": "Direction"
+  },
+  "meta": {
+    "nextRound": "Next round",
+    "nextRoundHint": "Log the scores for round {round}",
+    "target": "Target score",
+    "targetHint": "Lowest total under 100 wins",
+    "players": "Players",
+    "playersHint": "Long‑press a name to edit",
+    "completedRounds": "Rounds logged"
+  },
+  "errors": {
+    "invalidTotal": "Invalid total: {total}. Must be {validTotals}.",
+    "queenOfSpades": "At least one player must have 13 or more points (Queen of Spades is 13 points)",
+    "scoreRange": "Scores must be between 0 and 26 points",
+    "submitFailed": "Failed to submit round."
+  }
+}
