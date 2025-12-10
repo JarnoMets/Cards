@@ -1,0 +1,10 @@
+{
+  "about": "About Press",
+  "overview": "Press (also known as Zetten or Jokken) is a team-based trick-taking game for 4 players, popular in the Flemish Kempen region. Similar to Klaverjas and Euchre.",
+  "teams": "Players 1 & 3 form Team 1, Players 2 & 4 form Team 2 (players across from each other are teammates).",
+  "cardRanking": "Card Ranking: In trump suit, Jack of trump (Right Bower) is highest, followed by Jack of same color (Left Bower), then A, K, Q, 10, 9, 8, 7.",
+  "leftBowerNote": "The Left Bower (Jack of same color as trump) counts as a trump card, not as its original suit.",
+  "bidding": "Each player bids how many tricks their team will make (1-8). The highest bidder chooses trump.",
+  "scoring": "If the bidding team makes their bid: +bid points. If they fail: -bid points.",
+  "targetScore": "First team to 42 points wins the game."
+}

@@ -1,0 +1,17 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: cards-frontend
+  namespace: cards
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`cards.jarnomets.com`)
+      kind: Rule
+      services:
+        - name: frontend
+          port: 30401
+          scheme: http
+  tls:
+    secretName: card-scorer-tls

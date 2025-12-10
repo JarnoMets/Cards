@@ -1,0 +1,90 @@
+{
+  "languages": {
+    "en": "Engels",
+    "nl": "Nederlands"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "backButton": "← Terug",
+    "login": "Inloggen",
+    "loginTitle": "Admin Login",
+    "password": "Wachtwoord",
+    "passwordPlaceholder": "Voer admin wachtwoord in",
+    "invalidPassword": "Ongeldig wachtwoord",
+    "cancel": "Annuleren",
+    "save": "Instellingen opslaan",
+    "logout": "Uitloggen",
+    "openSettings": "Instellingen openen",
+    "notifications": {
+      "title": "Notificaties",
+      "emailOnGameEnd": "E-mail notificatie wanneer spel eindigt",
+      "emailAddress": "E-mailadres",
+      "emailPlaceholder": "jouw.email.com",
+      "testEmail": "Test E-mail Verzenden",
+      "sending": "Verzenden...",
+      "testEmailSuccess": "Test e-mail succesvol verzonden!",
+      "testEmailFailed": "Kon test e-mail niet verzenden",
+      "serverEnabled": "Server: Ingeschakeld",
+      "serverDisabled": "Server: Uitgeschakeld",
+      "dailyStats": "Vandaag verzonden",
+      "remaining": "resterend"
+    },
+    "security": {
+      "title": "Beveiliging",
+      "currentPassword": "Huidig wachtwoord",
+      "currentPasswordPlaceholder": "Voer huidig wachtwoord in",
+      "newPassword": "Nieuw wachtwoord",
+      "newPasswordPlaceholder": "Voer nieuw wachtwoord in",
+      "confirmPassword": "Bevestig wachtwoord",
+      "confirmPasswordPlaceholder": "Bevestig nieuw wachtwoord",
+      "changePassword": "Wachtwoord wijzigen",
+      "passwordChanged": "Wachtwoord succesvol gewijzigd!",
+      "passwordMismatch": "Nieuwe wachtwoorden komen niet overeen",
+      "passwordTooShort": "Wachtwoord moet minimaal 4 tekens bevatten",
+      "incorrectCurrent": "Huidig wachtwoord is onjuist"
+    },
+    "application": {
+      "title": "Applicatie",
+      "defaultLanguage": "Standaardtaal"
+    },
+    "animations": {
+      "title": "Animaties",
+      "hoverEffects": "Hover effecten op kaarten",
+      "cardFlip": "Kaart flip & entree animaties",
+      "pageTransitions": "Pagina overgangen",
+      "buttonPress": "Knop indruk feedback"
+    },
+    "dangerZone": {
+      "title": "Gevarenzone",
+      "warning": "Deze acties kunnen niet ongedaan worden gemaakt.",
+      "clearLocalData": "Lokale gegevens wissen",
+      "confirmClear": "Weet je zeker dat je alle lokale gegevens wilt wissen? Dit logt je uit en reset alle instellingen."
+    },
+    "admin": {
+      "title": "Beheer",
+      "description": "Server-side administratieve acties.",
+      "recalculateElo": "Herbereken Skill Ratings",
+      "recalculateEloDesc": "Herberekent alle skill ratings vanuit spelgeschiedenis. Gebruik na parameter wijzigingen.",
+      "recalculateButton": "Herbereken",
+      "recalculating": "Herberekenen...",
+      "recalculateConfirm": "Dit herberekent alle skill ratings vanaf nul. Dit kan even duren. Doorgaan?",
+      "recalculateSuccess": "Skill ratings herberekend! {games} spellen verwerkt, {players} spelers bijgewerkt.",
+      "recalculateFailed": "Kon skill ratings niet herberekenen",
+      "eloConfig": {
+        "title": "Skill Rating Parameters",
+        "startingElo": "Start Rating",
+        "targetRating": "Doel Gemiddelde",
+        "floorElo": "Minimum Rating",
+        "kFactorNew": "K-Factor (Nieuw)",
+        "kFactorMid": "K-Factor (Mid)",
+        "kFactorEstablished": "K-Factor (Ervaren)",
+        "gamesUntilMid": "Spellen tot Mid",
+        "gamesUntilEstablished": "Spellen tot Ervaren",
+        "save": "Configuratie Opslaan",
+        "saving": "Opslaan...",
+        "saveSuccess": "Configuratie succesvol opgeslagen!",
+        "saveFailed": "Kon configuratie niet opslaan"
+      }
+    }
+  }
+}

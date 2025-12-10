@@ -1,0 +1,57 @@
+# Rust
+target/
+Cargo.lock
+/backend/target/
+/backend/Cargo.lock
+flycheck*/
+
+# Node/Frontend
+node_modules/
+dist/
+.vite/
+/frontend/node_modules/
+/frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.editorconfig
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+pnpm-debug.log*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+/postgres_data/
+
+# Docker
+docker-compose.override.yaml
+
+# Keep deployment and k8s files
+!k8s/
+!docs/
+
+# Misc
+*.pem
+.DS_Store

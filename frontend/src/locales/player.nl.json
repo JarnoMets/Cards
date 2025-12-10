@@ -1,0 +1,134 @@
+{
+  "title": "Spelerprofiel",
+  "searchTitle": "Spelers zoeken",
+  "header": {
+    "eyebrow": "Spelerinzichten",
+    "since": "Actief sinds {date}",
+    "lastSeen": "Laatst gespeeld {date}",
+    "neverPlayed": "Nog geen afgeronde spellen"
+  },
+  "actions": {
+    "back": "← Terug naar ranglijst",
+    "search": "Spelers zoeken",
+    "refresh": "Gegevens vernieuwen",
+    "openGame": "Open spel"
+  },
+  "admin": {
+    "rename": "Speler hernoemen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen",
+    "deleteGame": "Spel verwijderen",
+    "renameSuccess": "Speler hernoemd in {count} spel | Speler hernoemd in {count} spellen",
+    "renameFailed": "Kon speler niet hernoemen",
+    "confirmDeleteTitle": "Spel verwijderen?",
+    "confirmDeleteMessage": "Dit verwijdert dit spel permanent met alle gegevens. Dit kan niet ongedaan worden gemaakt."
+  },
+  "settings": {
+    "title": "E-mailmeldingen",
+    "email": "E-mailadres",
+    "emailPlaceholder": "{'naam@email.com'}",
+    "notifications": "Spelresultaten ontvangen per e-mail",
+    "notificationsHint": "Ontvang een melding wanneer een spel waarin je speelde eindigt",
+    "save": "Opslaan",
+    "saved": "Instellingen opgeslagen",
+    "error": "Kon instellingen niet opslaan"
+  },
+  "summary": {
+    "totalGames": "Totaal aantal spellen",
+    "finishedGames": "Afgeronde spellen",
+    "inProgress": "Bezig",
+    "handsPlayed": "Handen gespeeld",
+    "winRate": "Winstpercentage",
+    "averagePlacement": "Gemiddelde positie",
+    "overallElo": "Rating",
+    "bestMode": "Beste speltype",
+    "favoriteMode": "Favoriete spel",
+    "noGames": "Nog geen spellen",
+    "winRateValue": "{value}% overwinningen",
+    "averagePlacementValue": "Positie {value}"
+  },
+  "breakdown": {
+    "title": "Overzicht per speltype",
+    "games": "Aantal spellen",
+    "finished": "afgerond",
+    "inProgress": "bezig",
+    "wins": "Overwinningen",
+    "rounds": "Handen",
+    "winRate": "Win%",
+    "winRateNote": "(afgerond)",
+    "best": "Beste positie",
+    "worst": "Slechtste positie",
+    "points": "Totale punten",
+    "avgPerHand": "gem/hand",
+    "elo": "Rating",
+    "eloGames": "gewaardeerde spellen",
+    "empty": "Nog geen spellen in dit type",
+    "expand": "Toon details",
+    "collapse": "Verberg details",
+    "comingSoon": "Gedetailleerde statistieken komen binnenkort...",
+    "heartsDetails": "Hearts Statistieken",
+    "kingDetails": "King Statistieken",
+    "doubleKingDetails": "Double King Statistieken",
+    "colorWhistDetails": "Kleurwiezen Statistieken",
+    "shootTheMoon": "Alles",
+    "resetTo100": "Reset bij 100",
+    "queenOfSpades": "Schoppendame",
+    "scoreDistribution": "Rondescore Verdeling"
+  },
+  "charts": {
+    "eloTrend": {
+      "title": "Rating trend",
+      "subtitle": "Volg je rating in de tijd",
+      "rating": "Rating",
+      "noData": "Speel wat spellen om je trend te zien",
+      "overall": "Algemeen"
+    },
+    "placementTrend": {
+      "title": "Positietrend",
+      "subtitle": "Lagere lijnen betekenen betere finishes"
+    },
+    "gameMix": {
+      "title": "Spelmix",
+      "subtitle": "Verdeling over alle speltypes"
+    }
+  },
+  "tables": {
+    "title": "Overzicht per speltype",
+    "columns": {
+      "mode": "Speltype",
+      "games": "Spellen",
+      "wins": "Wins",
+      "winRate": "Win%",
+      "average": "Gem. score",
+      "best": "Beste",
+      "worst": "Slechtste"
+    }
+  },
+  "recentGames": {
+    "title": "Recente spellen",
+    "empty": "Geen spellen voor deze speler gevonden.",
+    "placement": "#{placement} van {total}",
+    "margin": "Marge {value}",
+    "opened": "Gespeeld op {date}",
+    "you": "jij",
+    "filterAll": "Alles",
+    "filterFinished": "Afgerond",
+    "filterUnfinished": "Bezig",
+    "filterWon": "Gewonnen",
+    "page": "Pagina {current} van {total}"
+  },
+  "search": {
+    "title": "Zoek een speler",
+    "placeholder": "Typ minimaal 2 letters",
+    "helper": "Zoek door alle geregistreerde spelers.",
+    "results": "Toont {count} spelers",
+    "noQuery": "Typ om op naam te zoeken.",
+    "noResults": "Geen spelers gevonden.",
+    "viewProfile": "Bekijk profiel"
+  },
+  "errors": {
+    "notFound": "Geen spellen voor deze speler gevonden.",
+    "loadFailed": "Speler kon niet geladen worden. Probeer opnieuw."
+  }
+}

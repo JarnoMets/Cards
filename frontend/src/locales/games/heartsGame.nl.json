@@ -1,0 +1,54 @@
+{
+  "title": "Hartenjagen",
+  "eyebrow": "Harten-scoreboek",
+  "loading": "Laden...",
+  "error": "Fout",
+  "goHome": "Terug naar start",
+  "round": "Ronde",
+  "roundShort": "R",
+  "points": "punten",
+  "submitRound": "Ronde indienen",
+  "finalTally": "Eindstand",
+  "gameOver": "Spel afgelopen",
+  "winsWith": "wint met",
+  "exitGame": "Spel verlaten",
+  "deleteGameConfirm": "Spel verwijderen?",
+  "deleteGameWarning": "Weet je zeker dat je dit spel wilt verwijderen? Dit kan niet ongedaan worden gemaakt.",
+  "cancel": "Annuleren",
+  "delete": "Verwijderen",
+  "passing": {
+    "keep": "Kaarten houden",
+    "pass": "Geef door",
+    "cards": "kaarten",
+    "toLeft": "naar links",
+    "toRight": "naar rechts",
+    "across": "tegenover",
+    "positionsClockwise": "{positions} plaats met de klok mee | {positions} plaatsen met de klok mee"
+  },
+  "passingCard": {
+    "title": "Doorgeefronde",
+    "keepBadge": "Houden",
+    "passBadge": "Doorgeven",
+    "keepHeadline": "Houd je kaarten",
+    "keepDescription": "Deze ronde blijft je hand intact—niemand geeft kaarten door.",
+    "passHeadline": "Geef {cards} kaart door | Geef {cards} kaarten door",
+    "passDescription": "Geef {cards} kaart {direction}. Laat hem pas zien als iedereen klaar is. | Geef {cards} kaarten {direction}. Laat ze pas zien als iedereen klaar is.",
+    "cardsLabel": "Kaarten",
+    "directionLabel": "Richting"
+  },
+  "meta": {
+    "nextRound": "Volgende ronde",
+    "nextRoundHint": "Noteer de punten voor ronde {round}",
+    "target": "Doelscore",
+    "targetHint": "Laagste totaal onder 100 wint",
+    "players": "Spelers",
+    "playersHint": "Houd ingedrukt om een naam te wijzigen",
+    "completedRounds": "Genoteerde rondes"
+  },
+  "errors": {
+    "invalidTotal": "Ongeldige totaal: {total}. Moet {validTotals} zijn.",
+    "queenOfSpades": "Ten minste één speler moet 13 of meer punten hebben (Schoppenvrouw is 13 punten)",
+    "scoreRange": "Scores moeten tussen 0 en 26 punten liggen",
+    "submitFailed": "Ronde indienen mislukt."
+  }
+}

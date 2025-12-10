@@ -1,0 +1,45 @@
+{
+  "title": "Pressen",
+  "team1": "Team 1",
+  "team2": "Team 2",
+  "team1Players": "{p1} & {p2}",
+  "team2Players": "{p1} & {p2}",
+  "bidLabel": "Bod (1-8)",
+  "bidPlaceholder": "Slagen te winnen",
+  "biddingTeamLabel": "Biedend Team",
+  "tricksWonLabel": "Slagen Gewonnen",
+  "tricksWonPlaceholder": "0-8",
+  "trumpLabel": "Troef",
+  "scorePreview": "Score Vooruitblik",
+  "total": "Totaal",
+  "round": "Ronde",
+  "targetScore": "Doelscore",
+  "bid": "Bod",
+  "won": "Gewonnen",
+  "result": "Resultaat",
+  "success": "Gehaald!",
+  "failed": "Mislukt",
+  "trumpSuits": {
+    "hearts": "♥ Harten",
+    "diamonds": "♦ Ruiten",
+    "clubs": "♣ Klaveren",
+    "spades": "♠ Schoppen"
+  },
+  "cardRanking": {
+    "title": "Kaartvolgorde (Troef)",
+    "rightBower": "Troefboer (Bovenjok): Hoogste",
+    "leftBower": "Boer zelfde kleur (Onderjok): 2de",
+    "restOrder": "Dan: A, H, V, 10, 9, 8, 7"
+  },
+  "errors": {
+    "playerCount": "Pressen vereist precies vier spelers.",
+    "bidRange": "Bod moet tussen 1 en 8 slagen zijn.",
+    "bidRequired": "Voer een bod in.",
+    "biddingTeamRequired": "Selecteer het biedende team.",
+    "tricksRequired": "Voer de gewonnen slagen in.",
+    "tricksRange": "Slagen gewonnen moet tussen 0 en 8 zijn.",
+    "trumpRequired": "Selecteer een troefkleur.",
+    "missingGame": "Spelgegevens zijn nog niet beschikbaar.",
+    "submitFailed": "Ronde verzenden mislukt. Probeer het opnieuw."
+  }
+}

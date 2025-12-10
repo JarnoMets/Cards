@@ -1,0 +1,11 @@
+{
+  "about": "About Manille",
+  "overview": "Manille is a team-based trick-taking game for 4 players. Players 1 & 3 form a team against Players 2 & 4.",
+  "cardRanking": "Card Ranking: 10 (Manille) > A > K > Q > J > 9 > 8 > 7",
+  "cardPoints": "Card Points",
+  "totalPoints": "Total points per round: 60",
+  "trumpChoice": "The dealer chooses the trump suit or plays without trump (points doubled).",
+  "goingAlong": "The opposing team can 'go along' to double points if they think they'll score more.",
+  "goingAgainst": "The dealer's team can 'go against' to quadruple points (max multiplier is 4).",
+  "targetScore": "Default target: First team to 101 points wins."
+}

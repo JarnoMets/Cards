@@ -1,0 +1,10 @@
+{
+  "about": "Over Pressen",
+  "overview": "Pressen (ook wel Zetten of Jokken genoemd) is een teamgebaseerd slagspel voor 4 spelers, populair in de Vlaamse Kempen. Vergelijkbaar met Klaverjassen en Euchre.",
+  "teams": "Spelers 1 & 3 vormen Team 1, Spelers 2 & 4 vormen Team 2 (spelers tegenover elkaar zijn teamgenoten).",
+  "cardRanking": "Kaartvolgorde: In troef is de troefboer (Bovenjok) hoogste, gevolgd door boer van dezelfde kleur (Onderjok), dan A, H, V, 10, 9, 8, 7.",
+  "leftBowerNote": "De Onderjok (boer van dezelfde kleur als troef) telt als troefkaart, niet als zijn oorspronkelijke kleur.",
+  "bidding": "Elke speler biedt hoeveel slagen zijn team zal maken (1-8). De hoogste bieder kiest troef.",
+  "scoring": "Als het biedende team hun bod haalt: +bod punten. Als ze falen: -bod punten.",
+  "targetScore": "Het eerste team dat 42 punten bereikt wint het spel."
+}

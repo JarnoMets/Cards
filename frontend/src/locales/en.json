@@ -1,0 +1,90 @@
+{
+  "languages": {
+    "en": "English",
+    "nl": "Nederlands"
+  },
+  "settings": {
+    "title": "Settings",
+    "backButton": "← Back",
+    "login": "Login",
+    "loginTitle": "Admin Login",
+    "password": "Password",
+    "passwordPlaceholder": "Enter admin password",
+    "invalidPassword": "Invalid password",
+    "cancel": "Cancel",
+    "save": "Save Settings",
+    "logout": "Logout",
+    "openSettings": "Open settings",
+    "notifications": {
+      "title": "Notifications",
+      "emailOnGameEnd": "Email notification when game ends",
+      "emailAddress": "Email address",
+      "emailPlaceholder": "your.email.com",
+      "testEmail": "Send Test Email",
+      "sending": "Sending...",
+      "testEmailSuccess": "Test email sent successfully!",
+      "testEmailFailed": "Failed to send test email",
+      "serverEnabled": "Server: Enabled",
+      "serverDisabled": "Server: Disabled",
+      "dailyStats": "Today's emails",
+      "remaining": "remaining"
+    },
+    "security": {
+      "title": "Security",
+      "currentPassword": "Current password",
+      "currentPasswordPlaceholder": "Enter current password",
+      "newPassword": "New password",
+      "newPasswordPlaceholder": "Enter new password",
+      "confirmPassword": "Confirm password",
+      "confirmPasswordPlaceholder": "Confirm new password",
+      "changePassword": "Change Password",
+      "passwordChanged": "Password changed successfully!",
+      "passwordMismatch": "New passwords do not match",
+      "passwordTooShort": "Password must be at least 4 characters",
+      "incorrectCurrent": "Current password is incorrect"
+    },
+    "application": {
+      "title": "Application",
+      "defaultLanguage": "Default language"
+    },
+    "animations": {
+      "title": "Animations",
+      "hoverEffects": "Hover effects on cards",
+      "cardFlip": "Card flip & entrance animations",
+      "pageTransitions": "Page transitions",
+      "buttonPress": "Button press feedback"
+    },
+    "dangerZone": {
+      "title": "Danger Zone",
+      "warning": "These actions cannot be undone.",
+      "clearLocalData": "Clear Local Data",
+      "confirmClear": "Are you sure you want to clear all local data? This will log you out and reset all settings."
+    },
+    "admin": {
+      "title": "Administration",
+      "description": "Server-side administrative actions.",
+      "recalculateElo": "Recalculate Skill Ratings",
+      "recalculateEloDesc": "Recalculates all player skill ratings from game history. Use after parameter changes.",
+      "recalculateButton": "Recalculate",
+      "recalculating": "Recalculating...",
+      "recalculateConfirm": "This will recalculate all skill ratings from scratch. This may take a moment. Continue?",
+      "recalculateSuccess": "Skill ratings recalculated! Processed {games} games, updated {players} players.",
+      "recalculateFailed": "Failed to recalculate skill ratings",
+      "eloConfig": {
+        "title": "Skill Rating Parameters",
+        "startingElo": "Starting Rating",
+        "targetRating": "Target Average",
+        "floorElo": "Minimum Rating",
+        "kFactorNew": "K-Factor (New)",
+        "kFactorMid": "K-Factor (Mid)",
+        "kFactorEstablished": "K-Factor (Est.)",
+        "gamesUntilMid": "Games until Mid",
+        "gamesUntilEstablished": "Games until Est.",
+        "save": "Save Config",
+        "saving": "Saving...",
+        "saveSuccess": "Configuration saved successfully!",
+        "saveFailed": "Failed to save configuration"
+      }
+    }
+  }
+}

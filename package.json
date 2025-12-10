@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "vue-i18n": "^11.1.12",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/vue-router": "^2.0.0"
+  }
+}

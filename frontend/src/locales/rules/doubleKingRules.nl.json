@@ -1,0 +1,12 @@
+{
+  "about": "Dubbel Kingen Regels",
+  "rule1": "Dubbel Kingen wordt gespeeld met dezelfde 6 strafpunt en 4 positieve speltypen als reguliere Kingen",
+  "rule2": "Elk speltype kan 2 keer in willekeurige volgorde gespeeld worden",
+  "rule3": "Voor 4 spelers: 6 strafpunt spellen × 2 + 4 positieve spellen × 2 = 20 rondes totaal",
+  "rule4": "Voor 3 spelers: 6 strafpunt spellen × 2 + 3 positieve spellen × 2 = 18 rondes totaal",
+  "rule5": "Selecteer welk spel je wilt spelen voordat je scores invoert",
+  "rule6": "Voltooide spellen zijn gemarkeerd met een vinkje en kunnen niet geselecteerd worden",
+  "rule7": "De score volgt dezelfde regels als reguliere Kingen",
+  "rule8": "strafpunt spellen tellen als negatieve punten, troef rondes tellen als positieve punten",
+  "rule9": "De speler met de hoogste totaalscore na alle rondes wint"
+}

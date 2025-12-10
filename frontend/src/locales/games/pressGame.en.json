@@ -1,0 +1,45 @@
+{
+  "title": "Press",
+  "team1": "Team 1",
+  "team2": "Team 2",
+  "team1Players": "{p1} & {p2}",
+  "team2Players": "{p1} & {p2}",
+  "bidLabel": "Bid (1-8)",
+  "bidPlaceholder": "Tricks to win",
+  "biddingTeamLabel": "Bidding Team",
+  "tricksWonLabel": "Tricks Won",
+  "tricksWonPlaceholder": "0-8",
+  "trumpLabel": "Trump Suit",
+  "scorePreview": "Score Preview",
+  "total": "Total",
+  "round": "Round",
+  "targetScore": "Target Score",
+  "bid": "Bid",
+  "won": "Won",
+  "result": "Result",
+  "success": "Made it!",
+  "failed": "Failed",
+  "trumpSuits": {
+    "hearts": "♥ Hearts",
+    "diamonds": "♦ Diamonds",
+    "clubs": "♣ Clubs",
+    "spades": "♠ Spades"
+  },
+  "cardRanking": {
+    "title": "Card Ranking (Trump)",
+    "rightBower": "Jack of Trump (Right Bower): Highest",
+    "leftBower": "Jack of Same Color (Left Bower): 2nd",
+    "restOrder": "Then: A, K, Q, 10, 9, 8, 7"
+  },
+  "errors": {
+    "playerCount": "Press requires exactly four players.",
+    "bidRange": "Bid must be between 1 and 8 tricks.",
+    "bidRequired": "Please enter a bid.",
+    "biddingTeamRequired": "Please select the bidding team.",
+    "tricksRequired": "Please enter tricks won.",
+    "tricksRange": "Tricks won must be between 0 and 8.",
+    "trumpRequired": "Please select a trump suit.",
+    "missingGame": "Game data is not available yet.",
+    "submitFailed": "Failed to submit round. Please try again."
+  }
+}

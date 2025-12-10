@@ -1,0 +1,9 @@
+{
+  "about": "About Hearts",
+  "rule1": "Each heart is worth 1 point",
+  "rule2": "The Queen of Spades is worth 13 points",
+  "rule3": "The goal is to have the lowest score",
+  "rule4": "Shooting the moon (26 points) gives everyone else 26 points",
+  "rule5": "If a player has exactly 100 points, that player resets their score to 0",
+  "rule6": "Once someone has over 100 points, the game ends"
+}

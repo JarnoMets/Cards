@@ -1,0 +1,9 @@
+{
+  "errorMinPlayers": "Exactly four players are required",
+  "errorUniqueNames": "Player names must be unique",
+  "noGames": "No Whist games yet",
+  "eyebrow": "Line up your contracts",
+  "settings": "Game Settings",
+  "passRoundDoubling": "Double points after pass round",
+  "passRoundDoublingHint": "When all players pass, the next round's points are doubled."
+}

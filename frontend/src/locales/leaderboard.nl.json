@@ -1,0 +1,119 @@
+{
+  "title": "Klassement",
+  "subtitle": "Alle prestaties over alle opgeslagen spellen.",
+  "backButton": "← Terug naar spelselectie",
+  "retry": "Opnieuw proberen",
+  "updatedAt": "Bijgewerkt op {date}",
+  "playerStatsTitle": "Topspelers",
+  "noData": "Er zijn nog geen spellen gespeeld. Speel een paar rondes om het klassement te vullen!",
+  "tabs": {
+    "wins": "Overwinningen",
+    "elo": "Rating",
+    "records": "Records"
+  },
+  "gameFilter": {
+    "all": "Alle Spellen",
+    "label": "Speltype"
+  },
+  "boards": {
+    "overall": "Alle spellen",
+    "hearts": "Hartenjagen",
+    "king": "Kingen",
+    "doubleKing": "Dubbel Kingen",
+    "colorWhist": "Kleurenwiezen",
+    "whist": "Wiezen",
+    "manille": "Manille"
+  },
+  "boardDescriptions": {
+    "overall": "Samengevoegde resultaten over alle speltypes.",
+    "hearts": "Vermijd harten en de schoppenvrouw.",
+    "king": "Tien rondes vol tactiek.",
+    "doubleKing": "Dubbele contracten, dubbele eer.",
+    "colorWhist": "Creatieve contracten en kleurrijke overwinningen.",
+    "whist": "Traditioneel slagspel met strategische slims.",
+    "manille": "Teamgebaseerd slagspel met puntentelling."
+  },
+  "tableHeaders": {
+    "player": "Speler",
+    "games": "Spellen",
+    "wins": "Overwinningen",
+    "winRate": "Win%",
+    "average": "Gemiddelde score",
+    "highest": "Hoogste score",
+    "lowest": "Laagste score",
+    "elo": "Rating",
+    "change7d": "7d Wijziging"
+  },
+  "winsLabel": "{wins} overwinningen",
+  "averageLabel": "Gem. {value}",
+  "winRateLabel": "{value}% winratio",
+  "gamesLabel": "{count} spel | {count} spellen",
+  "topBadge": "Top {count}",
+  "viewFull": "Volledig klassement",
+  "showFull": "Toon alle spelers",
+  "hideFull": "Toon alleen top",
+  "searchPlayers": "Spelers zoeken",
+  "viewPlayer": "Bekijk speler",
+  "fullRankingTitle": "{board}-klassement",
+  "backToOverview": "← Terug naar overzicht",
+  "filters": {
+    "title": "Filters",
+    "board": "Spelmodus",
+    "search": "Zoek speler",
+    "searchPlaceholder": "Typ een naam...",
+    "minGames": "Minimale spellen",
+    "clear": "Wis filters",
+    "options": {
+      "none": "Alle spellen",
+      "atLeast": "Minstens {count}"
+    }
+  },
+  "sort": {
+    "label": "Sorteren op",
+    "wins": "Overwinningen",
+    "winRate": "Winratio",
+    "average": "Gemiddelde score",
+    "games": "Aantal spellen",
+    "name": "Spelernaam",
+    "directionAsc": "Oplopend",
+    "directionDesc": "Aflopend"
+  },
+  "showing": "Toont {count} van {total} spelers",
+  "records": {
+    "title": "Records voor Kingen en Dubbel Kingen",
+    "subtitle": "Historische hoogte- en dieptepunten uit elk afgewerkt spel.",
+    "kingHighest": "Kingen — Hoogste score",
+    "kingLowest": "Kingen — Laagste score",
+    "doubleKingHighest": "Dubbel Kingen — Hoogste score",
+    "doubleKingLowest": "Dubbel Kingen — Laagste score",
+    "noRecord": "Nog geen record",
+    "recordLine": "{score} pnt",
+    "recordDate": "sinds {date}",
+    "highestDescription": "Beste resultaten gesorteerd op score.",
+    "lowestDescription": "Pijnlijkste uitslagen op een rij.",
+    "scoreColumn": "Score",
+    "dateColumn": "Datum",
+    "viewDetails": "Bekijk volledige lijst",
+    "scopeLabel": "Soort score",
+    "detailTitle": "{mode} — {scope}",
+    "detailSubtitle": "Blader door alle resultaten met filters en sortering.",
+    "modeLabels": {
+      "king": "Kingen",
+      "double_king": "Dubbel Kingen"
+    },
+    "scopeLabels": {
+      "highest": "Hoogste scores",
+      "lowest": "Laagste scores"
+    },
+    "detail": {
+      "search": "Zoek speler",
+      "searchPlaceholder": "Filter op naam...",
+      "sort": "Sorteren op",
+      "score": "Score",
+      "date": "Datum",
+      "game": "Spel-ID",
+      "player": "Speler",
+      "back": "← Terug naar overzicht"
+    }
+  }
+}

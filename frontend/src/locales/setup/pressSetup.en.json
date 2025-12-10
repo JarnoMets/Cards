@@ -1,0 +1,6 @@
+{
+  "errorMinPlayers": "Exactly four players are required",
+  "errorUniqueNames": "Player names must be unique",
+  "noGames": "No Press games yet",
+  "eyebrow": "Bid your tricks and team up"
+}

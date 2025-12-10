@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Pick your deck",
+  "title": "Game Selection",
+  "description": "Choose a card game to play.",
+  "heartsTitle": "Hearts",
+  "heartsDescription": "Avoid hearts and the queen of spades!",
+  "kingTitle": "King",
+  "kingDescription": "Fun for an entire 10 rounds!",
+  "doubleKingTitle": "Double King",
+  "doubleKingDescription": "Double the rounds, double the fun!",
+  "whistTitle": "Whist",
+  "whistDescription": "Traditional trick-taking game.",
+  "colorWhistTitle": "Color Whist",
+  "colorWhistDescription": "Whist variant with color contracts.",
+  "manilleTitle": "Manille",
+  "manilleDescription": "Team-based trick-taking with point counting.",
+  "pressTitle": "Press",
+  "pressDescription": "Bid your tricks, make your bid!",
+  "leaderboardButton": "View leaderboard"
+}

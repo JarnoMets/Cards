@@ -1,0 +1,13 @@
+apiVersion: 1
+
+providers:
+  - name: Card Game Scorer
+    orgId: 1
+    folder: Card Games
+    folderUid: card-games
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards
