@@ -132,7 +132,7 @@
                     {{ t('whistGame.passRound') }}
                   </button>
                   <div v-if="scoreError" class="error-message">{{ scoreError }}</div>
-                  <button class="primary" @click="submitRound" :disabled="!canSubmit">
+                  <button class="primary" @click="submitRound" :disabled="!canSubmit || submittingRound">
                     {{ t('submitRound') }}
                   </button>
                 </div>
@@ -252,6 +252,7 @@ const { t } = useI18n()
 
 const game = ref<Game | null>(null)
 const loading = ref(true)
+const submittingRound = ref(false)
 const error = ref('')
 const scoreError = ref('')
 const previewError = ref('')
@@ -767,7 +768,7 @@ const buildWhistRound = (): WhistRoundRequest => {
 }
 
 const submitRound = async () => {
-  if (!game.value) return
+  if (!game.value || submittingRound.value) return
 
   scoreError.value = ''
 
@@ -780,11 +781,14 @@ const submitRound = async () => {
   }
 
   try {
+    submittingRound.value = true
     const updated = await gamesApi.addRound(gameId, { whistRound })
     game.value = updated
     resetSelections(updated.players.length)
   } catch (err: any) {
     scoreError.value = err.response?.data?.error || (t('whistGame.errors.submitFailed') as string)
+  } finally {
+    submittingRound.value = false
   }
 }
 

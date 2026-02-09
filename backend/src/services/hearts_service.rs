@@ -115,45 +115,18 @@ impl GameService for HeartsService {
             // Shooting the moon: determine the scoring method
             let shooter = shooter_idx.unwrap();
 
-            // Calculate what totals would be with shooter getting 0, others getting +26
-            // NOTE: game end (who actually wins) is determined at the end of the game
-            // by comparing totals, NOT by altering this per-round scoring.
             let current_totals: Vec<i32> = game.players.iter().map(|p| p.total_score).collect();
-            let mut totals_with_default = current_totals.clone();
-            for i in 0..totals_with_default.len() {
-                if i != shooter {
-                    totals_with_default[i] += 26;
-                }
-            }
-
-            // Apply 100 reset rule: if someone hits exactly 100, they reset to 0
-            let mut totals_after_reset = totals_with_default.clone();
-            for i in 0..totals_after_reset.len() {
-                if totals_after_reset[i] == 100 {
-                    totals_after_reset[i] = 0;
-                }
-            }
-
-            // Someone reaches or exceeds 100 with default scoring (before reset)
-            let someone_reaches_100 = totals_with_default.iter().any(|&t| t >= 100);
-
-            // Determine if shooter has the lowest score AFTER accounting for 100 reset
-            let min_total = *totals_after_reset.iter().min().unwrap();
-            let shooter_has_lowest = totals_after_reset[shooter] == min_total;
+            let min_total = *current_totals.iter().min().unwrap();
+            let shooter_is_winning = current_totals[shooter] == min_total;
 
             let mut scores = vec![0; game.players.len()];
-            if someone_reaches_100 && shooter_has_lowest {
-                // Shooter wins the game; keep default moon scoring
-                for i in 0..scores.len() {
-                    if i != shooter {
-                        scores[i] = 26;
-                    }
-                }
-            } else if someone_reaches_100 && !shooter_has_lowest {
-                // Shooter loses the game: shooter gets -26, others 0
+            if shooter_is_winning {
+                // If winning (lowest score), taking -26 points is often preferred 
+                // to stay in the lead without ending the game prematurely for others.
                 scores[shooter] = -26;
             } else {
-                // No-one at 100 yet, default moon scoring
+                // If losing (not the lowest score), giving others +26 points 
+                // helps catch up or forces the game to end while the shooter has improved their relative standing.
                 for i in 0..scores.len() {
                     if i != shooter {
                         scores[i] = 26;

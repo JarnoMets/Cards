@@ -87,7 +87,9 @@
                 <td :colspan="game.players.length + 1" class="table-actions-cell">
                   <div class="table-actions">
                     <div v-if="scoreError" class="error-message" style="margin:0 12px 0 0">{{ scoreError }}</div>
-                    <button class="primary" @click="submitRound" :disabled="!canSubmitRound || enteredTotal === 0" style="margin-left:auto">{{ t('submitRound') }}</button>
+                    <button class="primary" @click="submitRound" :disabled="!canSubmitRound || enteredTotal === 0 || submittingRound" style="margin-left:auto">
+                      {{ submittingRound ? '...' : t('submitRound') }}
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -192,6 +194,7 @@ const editingRoundIndex = ref<number | null>(null)
 const editingRoundScores = ref<number[]>([])
 const editingRoundError = ref('')
 const savingRound = ref(false)
+const submittingRound = ref(false)
 
 const {
   editingPlayerId,
@@ -395,15 +398,15 @@ const passingDetails = computed<PassingCardDetails | null>(() => {
   return {
     mode: 'pass',
     badge: t('heartsGame.passingCard.passBadge'),
-    headline: t('heartsGame.passingCard.passHeadline', { cards }),
-    description: t('heartsGame.passingCard.passDescription', { cards, direction }),
+    headline: t('heartsGame.passingCard.passHeadline', { cards }, cards),
+    description: t('heartsGame.passingCard.passDescription', { cards, direction }, cards),
     cards,
     direction
   }
 })
 
 const submitRound = async () => {
-  if (!game.value) return
+  if (!game.value || submittingRound.value) return
 
   scoreError.value = ''
   const validationError = validateHeartsScores(roundScores.value)
@@ -413,6 +416,7 @@ const submitRound = async () => {
   }
 
   try {
+    submittingRound.value = true
     game.value = await gamesApi.addRound(gameId, { scores: roundScores.value })
     roundScores.value = new Array(game.value.players.length).fill(0)
     await nextTick()
@@ -421,6 +425,8 @@ const submitRound = async () => {
     }
   } catch (err: any) {
     scoreError.value = err.response?.data?.error || t('heartsGame.errors.submitFailed')
+  } finally {
+    submittingRound.value = false
   }
 }
 

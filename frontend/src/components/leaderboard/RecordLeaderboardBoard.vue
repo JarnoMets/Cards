@@ -144,7 +144,8 @@ const openGame = (gameType: GameType, gameId: string) => {
     double_king: 'double-king',
     color_whist: 'color-whist',
     whist: 'whist',
-    manille: 'manille'
+    manille: 'manille',
+    press: 'press'
   }
   const routeName = gameRoutes[gameType] || 'king'
   router.push(`/${props.locale}/${routeName}/${gameId}`)

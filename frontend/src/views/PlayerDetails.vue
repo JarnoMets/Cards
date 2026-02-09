@@ -345,9 +345,13 @@
                     <span 
                       v-if="game.elo_change !== undefined && game.elo_change !== null" 
                       class="elo-change-badge"
-                      :class="{ 'elo-positive': game.elo_change > 0, 'elo-negative': game.elo_change < 0 }"
+                      :class="{ 
+                        'elo-positive': game.elo_change > 0, 
+                        'elo-negative': game.elo_change < 0,
+                        'elo-neutral': game.elo_change === 0
+                      }"
                     >
-                      {{ game.elo_change > 0 ? '+' : '' }}{{ game.elo_change }}
+                      {{ game.elo_change >= 0 ? '+' : '' }}{{ game.elo_change }}
                     </span>
                     <span class="placement-badge" :class="{ 'placement-badge--win': game.did_win }">
                       #{{ game.placement }}/{{ game.total_players }}
@@ -470,7 +474,8 @@ const GAME_ROUTE_BY_TYPE: Record<GameType, string> = {
   double_king: 'DoubleKingGame',
   color_whist: 'ColorWhistGame',
   whist: 'WhistGame',
-  manille: 'ManilleGame'
+  manille: 'ManilleGame',
+  press: 'PressGame'
 }
 
 const GAME_COLORS: Record<GameType, string> = {
@@ -479,7 +484,8 @@ const GAME_COLORS: Record<GameType, string> = {
   double_king: '#8b6914',
   color_whist: '#1a1a1a',
   whist: '#34495e',
-  manille: '#6b5b95'
+  manille: '#6b5b95',
+  press: '#d35400'
 }
 
 const { t } = useI18n()
@@ -541,7 +547,8 @@ const expandedBreakdowns = ref<Record<GameType, boolean>>({
   double_king: false,
   color_whist: false,
   whist: false,
-  manille: false
+  manille: false,
+  press: false
 })
 
 // Hearts detailed statistics
@@ -911,32 +918,31 @@ const heartsStats = computed<HeartsDetailedStats | null>(() => {
       totalRounds++
       
       // Check if someone shot the moon this round
-      // When someone shoots the moon, they get 0 (or -26) and others get 26
+      // When someone shoots the moon, they get 0 (or -26) and others get 26 (or 0)
       const allRoundScores = game.players.map(p => {
         const prevScore = i > 0 ? p.scores[i - 1] : 0
         return p.scores[i] - prevScore
       })
       
-      // Someone shot the moon if one player has 0/-26 and all others have 26
+      // Someone shot the moon if one player has 0 and all others have 26
+      // OR if one player has -26 and all others have 0
       const someoneShotMoon = allRoundScores.some((score, idx) => {
-        if (score !== 0 && score !== -26) return false
         const others = allRoundScores.filter((_, i) => i !== idx)
-        return others.every(s => s === 26)
+        return (score === 0 && others.every(s => s === 26)) || 
+               (score === -26 && others.every(s => s === 0))
       })
       
       // Did THIS player shoot the moon?
-      const playerShotMoon = (roundScore === 0 || roundScore === -26) && 
-        allRoundScores.filter((_, idx) => idx !== playerIndex).every(s => s === 26)
+      const playerShotMoon = (roundScore === 0 && allRoundScores.filter((_, idx) => idx !== playerIndex).every(s => s === 26)) ||
+                              (roundScore === -26 && allRoundScores.filter((_, idx) => idx !== playerIndex).every(s => s === 0))
       
       if (playerShotMoon) {
         shootTheMoonCount++
         // Count under "shot the moon" category
         scoreFrequency[SHOT_MOON_KEY]++
-      } else if (someoneShotMoon) {
-        // Someone else shot the moon, this player got 26
-        scoreFrequency[26] = (scoreFrequency[26] || 0) + 1
       } else {
-        // Normal round - count the actual score (0-26)
+        // Normal round or someone else shot the moon
+        // Count the actual score (usually 0-26, but could be -26 if shooter)
         const normalizedScore = Math.max(0, Math.min(26, roundScore))
         scoreFrequency[normalizedScore] = (scoreFrequency[normalizedScore] || 0) + 1
       }
@@ -1003,7 +1009,8 @@ const gameTypeLabel = (type: GameType) => {
     double_king: 'leaderboard.boards.doubleKing',
     color_whist: 'leaderboard.boards.colorWhist',
     whist: 'leaderboard.boards.whist',
-    manille: 'leaderboard.boards.manille'
+    manille: 'leaderboard.boards.manille',
+    press: 'leaderboard.boards.press'
   }
   return t(keyMap[type])
 }
@@ -1049,7 +1056,8 @@ const placementInsightsByMode = computed<Record<GameType, PlacementInsights>>(()
     double_king: { best: null, worst: null, bestCount: 0, worstCount: 0, total: 0, count: 0 },
     color_whist: { best: null, worst: null, bestCount: 0, worstCount: 0, total: 0, count: 0 },
     whist: { best: null, worst: null, bestCount: 0, worstCount: 0, total: 0, count: 0 },
-    manille: { best: null, worst: null, bestCount: 0, worstCount: 0, total: 0, count: 0 }
+    manille: { best: null, worst: null, bestCount: 0, worstCount: 0, total: 0, count: 0 },
+    press: { best: null, worst: null, bestCount: 0, worstCount: 0, total: 0, count: 0 }
   }
 
   if (!profile.value) return insights
@@ -2344,7 +2352,6 @@ const sortedParticipants = (game: PlayerGameSummary) => {
   background: #fff;
   color: var(--primary-color) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-weight: 700;
 }
 
 .games-grid {
@@ -2744,6 +2751,18 @@ const sortedParticipants = (game: PlayerGameSummary) => {
 
 .elo-low {
   color: #c41e3a;
+}
+
+.elo-positive {
+  color: #2f8f5d;
+}
+
+.elo-negative {
+  color: #c41e3a;
+}
+
+.elo-neutral {
+  color: var(--ink-muted);
 }
 
 /* Scribble underline for headings */

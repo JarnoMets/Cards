@@ -155,7 +155,7 @@
               <td colspan="4" class="table-actions-cell">
                 <div class="table-actions">
                   <div v-if="scoreError" class="error-message">{{ scoreError }}</div>
-                  <button class="primary" @click="submitRound" :disabled="!canSubmit">
+                  <button class="primary" @click="submitRound" :disabled="!canSubmit || submittingRound">
                     {{ t('submitRound') }}
                   </button>
                 </div>
@@ -204,6 +204,7 @@ const { t } = useI18n()
 
 const game = ref<Game | null>(null)
 const loading = ref(true)
+const submittingRound = ref(false)
 const error = ref('')
 const scoreError = ref('')
 const showWinnerModal = ref(false)
@@ -318,7 +319,7 @@ const loadGame = async () => {
 }
 
 const submitRound = async () => {
-  if (!game.value || !canSubmit.value) return
+  if (!game.value || !canSubmit.value || submittingRound.value) return
   
   scoreError.value = ''
   
@@ -329,6 +330,7 @@ const submitRound = async () => {
   }
   
   try {
+    submittingRound.value = true
     const updated = await gamesApi.addRound(gameId, { manilleRound })
     game.value = updated
     
@@ -347,6 +349,8 @@ const submitRound = async () => {
     } else {
       scoreError.value = t('manilleGame.errors.submitFailed')
     }
+  } finally {
+    submittingRound.value = false
   }
 }
 

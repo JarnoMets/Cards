@@ -145,6 +145,9 @@ impl Database {
         // Also rename in the ELO table
         let _ = self.rename_player_elo(old_name, new_name).await;
 
+        // Also rename in the settings table
+        let _ = self.rename_player_settings(old_name, new_name).await;
+
         Ok(result.rows_affected())
     }
 }

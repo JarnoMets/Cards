@@ -36,7 +36,8 @@ export const leaderboardBoardOrder: LeaderboardBoardKey[] = [
   'double_king',
   'color_whist',
   'whist',
-  'manille'
+  'manille',
+  'press'
 ]
 
 export const leaderboardBoardMeta: Record<LeaderboardBoardKey, { labelKey: string; descriptionKey: string }> = {
@@ -67,6 +68,10 @@ export const leaderboardBoardMeta: Record<LeaderboardBoardKey, { labelKey: strin
   manille: {
     labelKey: 'leaderboard.boards.manille',
     descriptionKey: 'leaderboard.boardDescriptions.manille'
+  },
+  press: {
+    labelKey: 'leaderboard.boards.press',
+    descriptionKey: 'leaderboard.boardDescriptions.press'
   }
 }
 
@@ -79,7 +84,8 @@ const emptyRowsMap = (): LeaderboardRowsMap => ({
   double_king: [],
   color_whist: [],
   whist: [],
-  manille: []
+  manille: [],
+  press: []
 })
 
 export const buildLeaderboardRows = (

@@ -215,6 +215,11 @@
   color: #c62828;
 }
 
+.player-score-elo.elo-neutral {
+  background: rgba(158, 158, 158, 0.15);
+  color: #757575;
+}
+
 .game-card-actions {
   margin-top: 10px;
   display: flex;
