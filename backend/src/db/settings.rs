@@ -25,7 +25,7 @@ impl Database {
         let row = sqlx::query(
             "SELECT player_name, email, game_notifications 
              FROM player_settings 
-             WHERE LOWER(player_name) = $1"
+             WHERE LOWER(TRIM(player_name)) = $1"
         )
         .bind(&normalized)
         .fetch_optional(&self.pool)
@@ -38,7 +38,7 @@ impl Database {
                 game_notifications: row.get("game_notifications"),
             }),
             None => Ok(PlayerSettings {
-                player_name: player_name.to_string(),
+                player_name: player_name.trim().to_string(),
                 email: None,
                 game_notifications: false,
             }),
@@ -47,6 +47,8 @@ impl Database {
 
     /// Update player settings (upsert)
     pub async fn update_player_settings(&self, settings: &PlayerSettings) -> DbResult<()> {
+        let trimmed_name = settings.player_name.trim();
+        
         sqlx::query(
             "INSERT INTO player_settings (player_name, email, game_notifications, updated_at)
              VALUES ($1, $2, $3, NOW())
@@ -56,7 +58,7 @@ impl Database {
                 game_notifications = EXCLUDED.game_notifications,
                 updated_at = NOW()"
         )
-        .bind(&settings.player_name)
+        .bind(trimmed_name)
         .bind(&settings.email)
         .bind(settings.game_notifications)
         .execute(&self.pool)
@@ -79,7 +81,7 @@ impl Database {
         let rows = sqlx::query(
             "SELECT player_name, email, game_notifications 
              FROM player_settings 
-             WHERE LOWER(player_name) = ANY($1) 
+             WHERE LOWER(TRIM(player_name)) = ANY($1) 
                AND game_notifications = TRUE 
                AND email IS NOT NULL 
                AND email != ''"

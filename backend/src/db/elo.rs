@@ -610,6 +610,13 @@ impl Database {
             .execute(&self.pool)
             .await?;
 
+        // Also rename in game ELO changes
+        sqlx::query("UPDATE game_elo_changes SET player_name = $1 WHERE LOWER(player_name) = $2")
+            .bind(new_trimmed)
+            .bind(&old_normalized)
+            .execute(&self.pool)
+            .await?;
+
         Ok(old_entries.len() as u64)
     }
 

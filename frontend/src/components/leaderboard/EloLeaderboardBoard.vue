@@ -58,7 +58,7 @@
               >
                 <span v-if="row.elo_change > 0">↑ +{{ row.elo_change }}</span>
                 <span v-else-if="row.elo_change < 0">↓ {{ row.elo_change }}</span>
-                <span v-else>—</span>
+                <span v-else>+0</span>
               </span>
               <span v-else class="elo-change-na">—</span>
             </td>

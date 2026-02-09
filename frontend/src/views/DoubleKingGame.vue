@@ -121,7 +121,7 @@
               <td :colspan="game.players.length + 1" class="table-actions-cell">
                 <div class="table-actions">
                   <div v-if="scoreError" class="error-message" style="margin:0 12px 0 0">{{ scoreError }}</div>
-                  <button class="primary" @click="submitRound" :disabled="!canSubmitRound || enteredTotal === 0" style="margin-left:auto">{{ t('submitRound') }}</button>
+                  <button class="primary" @click="submitRound" :disabled="!canSubmitRound || enteredTotal === 0 || submittingRound" style="margin-left:auto">{{ t('submitRound') }}</button>
                 </div>
               </td>
             </tr>
@@ -231,6 +231,7 @@ const editingRoundIndex = ref<number | null>(null)
 const editingRoundScores = ref<number[]>([])
 const editingRoundError = ref('')
 const savingRound = ref(false)
+const submittingRound = ref(false)
 const editingGameIndex = ref<number | null>(null)
 const editingRoundLimits = computed(() => getDoubleKingLimits(editingGameIndex.value))
 
@@ -554,7 +555,7 @@ const loadGame = async (attempt: number = 1) => {
 }
 
 const submitRound = async () => {
-  if (!game.value) return
+  if (!game.value || submittingRound.value) return
 
   scoreError.value = ''
   const validationError = validateDoubleKingScores(roundScores.value, selectedGameIndex.value)
@@ -564,6 +565,7 @@ const submitRound = async () => {
   }
 
   try {
+    submittingRound.value = true
     game.value = await gamesApi.addRound(gameId, { scores: roundScores.value, game_index: selectedGameIndex.value ?? undefined })
     roundScores.value = new Array(game.value.players.length).fill(0)
     
@@ -579,6 +581,8 @@ const submitRound = async () => {
     }
   } catch (err: any) {
     scoreError.value = err.response?.data?.error || t('doubleKingGame.errors.submitFailed')
+  } finally {
+    submittingRound.value = false
   }
 }
 

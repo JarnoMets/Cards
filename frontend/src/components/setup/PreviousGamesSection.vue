@@ -46,10 +46,14 @@
               <div v-for="player in game.players" :key="player.id" class="player-score">
                 <span 
                   class="player-score-elo" 
-                  v-if="getEloChange(game, player.name)" 
-                  :class="getEloChange(game, player.name)! > 0 ? 'elo-positive' : 'elo-negative'"
+                  v-if="getEloChange(game, player.name) !== null" 
+                  :class="{
+                    'elo-positive': getEloChange(game, player.name)! > 0,
+                    'elo-negative': getEloChange(game, player.name)! < 0,
+                    'elo-neutral': getEloChange(game, player.name) === 0
+                  }"
                 >
-                  {{ getEloChange(game, player.name)! > 0 ? '+' : '' }}{{ getEloChange(game, player.name) }}
+                  {{ getEloChange(game, player.name)! >= 0 ? '+' : '' }}{{ getEloChange(game, player.name) }}
                 </span>
                 {{ player.name }}: <span class="score-value">{{ player.total_score }}</span>
               </div>
@@ -113,8 +117,9 @@ const formatDate = (dateString: string) => {
 
 const getEloChange = (game: GameWithElo, playerName: string): number | null => {
   if (!game.elo_changes) return null
+  const searchName = playerName.trim().toLowerCase()
   const change = game.elo_changes.find(
-    c => c.player_name.toLowerCase() === playerName.toLowerCase()
+    c => c.player_name.trim().toLowerCase() === searchName
   )
   return change?.elo_change ?? null
 }
