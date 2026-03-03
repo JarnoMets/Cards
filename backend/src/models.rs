@@ -322,5 +322,6 @@ pub struct PressRoundRequest {
     /// Tricks actually won by the bidding team
     pub tricks_won: u8,
     /// Trump suit chosen by the highest bidder
+    #[allow(dead_code)]
     pub trump: PressTrump,
 }

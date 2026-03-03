@@ -25,4 +25,6 @@ pub use elo::{EloHistoryEntry, GameEloChange, OverallEloRow, PlayerEloRow};
 pub use leaderboard::{LeaderboardStatRow, RecordScoreRow};
 
 // Re-export types from settings
-pub use settings::{EmailDailyStats, PlayerSettings};
+pub use settings::PlayerSettings;
+#[allow(unused_imports)]
+pub use settings::EmailDailyStats;
