@@ -117,6 +117,7 @@ impl Database {
     }
 
     /// Get number of ELO-rated games for a player in a specific game type
+    #[allow(dead_code)]
     pub async fn get_player_elo_games_count(
         &self,
         player_name: &str,
