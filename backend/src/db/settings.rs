@@ -48,11 +48,12 @@ impl Database {
     /// Update player settings (upsert)
     pub async fn update_player_settings(&self, settings: &PlayerSettings) -> DbResult<()> {
         let trimmed_name = settings.player_name.trim();
+        let normalized = trimmed_name.to_lowercase();
         
         sqlx::query(
             "INSERT INTO player_settings (player_name, email, game_notifications, updated_at)
              VALUES ($1, $2, $3, NOW())
-             ON CONFLICT (player_name) 
+             ON CONFLICT (LOWER(TRIM(player_name))) 
              DO UPDATE SET 
                 email = EXCLUDED.email,
                 game_notifications = EXCLUDED.game_notifications,

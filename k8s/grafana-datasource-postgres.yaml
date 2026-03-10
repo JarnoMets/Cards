@@ -17,7 +17,7 @@ data:
         database: postgresdb
         user: postgresuser
         secureJsonData:
-          password: postgrespwd
+          password: your-password-here
         jsonData:
           sslmode: disable
           maxOpenConns: 5

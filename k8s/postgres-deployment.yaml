@@ -97,4 +97,4 @@ metadata:
   namespace: postgres
 type: Opaque
 stringData:
-  password: postgrespwd
+  password: your-password-here

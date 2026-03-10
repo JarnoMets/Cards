@@ -4,16 +4,16 @@ services:
   postgres:
     image: postgres:15
     environment:
-      - POSTGRES_DB=postgresdb
-      - POSTGRES_USER=postgresuser
-      - POSTGRES_PASSWORD=postgrespwd
+      - POSTGRES_DB=${POSTGRES_DB:-postgresdb}
+      - POSTGRES_USER=${POSTGRES_USER:-postgresuser}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgrespwd}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgresuser -d postgresdb"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgresuser} -d ${POSTGRES_DB:-postgresdb}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -26,7 +26,7 @@ services:
       - "8080:8080"
     environment:
       - RUST_LOG=info
-      - DATABASE_URL=postgres://postgresuser:postgrespwd@postgres:5432/postgresdb
+      - DATABASE_URL=postgres://${POSTGRES_USER:-postgresuser}:${POSTGRES_PASSWORD:-postgrespwd}@postgres:5432/${POSTGRES_DB:-postgresdb}
     restart: unless-stopped
     depends_on:
       postgres:

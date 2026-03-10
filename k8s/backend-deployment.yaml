@@ -24,7 +24,7 @@ spec:
         - name: RUST_LOG
           value: "info"
         - name: DATABASE_URL
-          value: "postgres://postgresuser:postgrespwd@postgres.postgres.svc.cluster.local:5432/postgresdb"
+          value: "postgres://postgresuser:your-password-here@postgres.postgres.svc.cluster.local:5432/postgresdb"
         # Email notification settings - using Brevo SMTP
         - name: EMAIL_ENABLED
           value: "true"
@@ -35,13 +35,13 @@ spec:
         - name: SMTP_USE_TLS
           value: "true"
         - name: SMTP_USER
-          value: "REDACTED_SMTP_USER"
+          value: "your-smtp-user"
         - name: SMTP_PASS
-          value: "REDACTED_SMTP_PASSWORD"
+          value: "your-smtp-password"
         - name: EMAIL_FROM
-          value: "cards@jarnomets.com"
+          value: "cards@yourdomain.com"
         - name: EMAIL_TO
-          value: "REDACTED_EMAIL"
+          value: "your-email@example.com"
         resources:
           requests:
             memory: "128Mi"

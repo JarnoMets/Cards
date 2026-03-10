@@ -48,6 +48,11 @@ pnpm-debug.log*
 # Docker
 docker-compose.override.yaml
 
+# Sensitive k8s files
+k8s/*secret*.yaml
+k8s/*secret*.yml
+k8s/.kubeconfig
+
 # Keep deployment and k8s files
 !k8s/
 !docs/

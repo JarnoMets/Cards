@@ -226,6 +226,11 @@ impl Database {
         .execute(pool)
         .await?;
 
+        // Case-insensitive unique index for player names
+        let _ = sqlx::query("CREATE UNIQUE INDEX IF NOT EXISTS idx_player_settings_name_unique ON player_settings (LOWER(TRIM(player_name)))")
+            .execute(pool)
+            .await;
+
         let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_player_settings_notifications ON player_settings(game_notifications) WHERE game_notifications = TRUE")
             .execute(pool)
             .await;

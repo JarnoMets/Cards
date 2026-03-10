@@ -116,17 +116,53 @@ impl GameService for HeartsService {
             let shooter = shooter_idx.unwrap();
 
             let current_totals: Vec<i32> = game.players.iter().map(|p| p.total_score).collect();
-            let min_total = *current_totals.iter().min().unwrap();
-            let shooter_is_winning = current_totals[shooter] == min_total;
 
             let mut scores = vec![0; game.players.len()];
-            if shooter_is_winning {
-                // If winning (lowest score), taking -26 points is often preferred 
-                // to stay in the lead without ending the game prematurely for others.
-                scores[shooter] = -26;
+
+            // Check if giving others +26 would cause the shooter to lose.
+            // A player loses when they reach the target score (usually 100).
+            // In Hearts, the player with the LOWEST score when someone reaches 100 wins.
+            // If giving others +26 pushes them over 100 but keeps shooter BELOW those who crossed, 
+            // the shooter might win. But if giving others +26 makes them lose (end game), 
+            // and shooter isn't winning, it's safer to take -26.
+            
+            // Standard Hearts rule: Shooter chooses. 
+            // Automated logic: If giving others +26 makes ANYONE reach 100, 
+            // check if shooter would then be the winner.
+            let mut someone_reaches_100 = false;
+            for (i, &total) in current_totals.iter().enumerate() {
+                if i != shooter && total + 26 >= 100 {
+                    someone_reaches_100 = true;
+                    break;
+                }
+            }
+
+            if someone_reaches_100 {
+                // If giving +26 ends the game, only do it if the shooter would actually win (lowest score).
+                let mut projected_totals = current_totals.clone();
+                for i in 0..projected_totals.len() {
+                    if i != shooter {
+                        projected_totals[i] += 26;
+                    }
+                }
+                
+                let min_projected = *projected_totals.iter().min().unwrap();
+                let shooter_wins_after_plus_26 = projected_totals[shooter] == min_projected;
+
+                if shooter_wins_after_plus_26 {
+                    // Give others +26 to win the game
+                    for i in 0..scores.len() {
+                        if i != shooter {
+                            scores[i] = 26;
+                        }
+                    }
+                } else {
+                    // Take -26 to avoid losing or to try and win later
+                    scores[shooter] = -26;
+                }
             } else {
-                // If losing (not the lowest score), giving others +26 points 
-                // helps catch up or forces the game to end while the shooter has improved their relative standing.
+                // Game doesn't end, usually giving others +26 is better as it moves everyone 
+                // closer to the end while you stay at your current score.
                 for i in 0..scores.len() {
                     if i != shooter {
                         scores[i] = 26;
