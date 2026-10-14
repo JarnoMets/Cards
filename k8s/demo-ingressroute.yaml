@@ -1,0 +1,93 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: demo-strip-cards
+  namespace: cards
+spec:
+  stripPrefix:
+    prefixes:
+      - /cards
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: demo-readonly-header
+  namespace: cards
+spec:
+  headers:
+    customRequestHeaders:
+      X-Demo-Readonly: "true"
+---
+# Relative Vite assets (./assets/…) break at /cards without a trailing slash.
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: demo-slash-cards
+  namespace: cards
+spec:
+  redirectRegex:
+    regex: ^(https?)://([^/]+)/cards$
+    replacement: ${1}://${2}/cards/
+    permanent: true
+# TLS secret demo-jarnomets-tls is issued in the about namespace and copied here.
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: demo-cards
+  namespace: cards
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    # Block admin entirely on the demo host (even GET)
+    - match: Host(`demo.jarnomets.com`) && PathPrefix(`/cards/api/admin`)
+      kind: Rule
+      priority: 100
+      middlewares:
+        - name: demo-strip-cards
+        - name: demo-readonly-header
+      services:
+        - name: backend
+          port: 8080
+    # Read-only API
+    - match: Host(`demo.jarnomets.com`) && PathPrefix(`/cards/api`) && Method(`GET`, `HEAD`, `OPTIONS`)
+      kind: Rule
+      priority: 50
+      middlewares:
+        - name: demo-strip-cards
+        - name: demo-readonly-header
+      services:
+        - name: frontend
+          port: 80
+    # Mutating API → backend guard (403). Must outrank the UI catch-all.
+    - match: Host(`demo.jarnomets.com`) && PathPrefix(`/cards/api`)
+      kind: Rule
+      priority: 40
+      middlewares:
+        - name: demo-strip-cards
+        - name: demo-readonly-header
+      services:
+        - name: backend
+          port: 8080
+    # Exact /cards → /cards/ so relative ./assets resolve under /cards/
+    - match: Host(`demo.jarnomets.com`) && Path(`/cards`)
+      kind: Rule
+      priority: 20
+      middlewares:
+        - name: demo-slash-cards
+      services:
+        - name: frontend
+          port: 80
+    # UI + static assets
+    - match: Host(`demo.jarnomets.com`) && PathPrefix(`/cards`)
+      kind: Rule
+      priority: 10
+      middlewares:
+        - name: demo-strip-cards
+        - name: demo-readonly-header
+      services:
+        - name: frontend
+          port: 80
+  tls:
+    secretName: demo-jarnomets-tls

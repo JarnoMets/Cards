@@ -2,11 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="/32x32.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/64x64.png">
-    <link rel="icon" type="image/png" sizes="128x128" href="/128x128.png">
-    <link rel="apple-touch-icon" sizes="256x256" href="/256x256.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="/512x512.png">
+    <!-- Set base before Vite injects relative assets so /cards (no slash) still loads /cards/assets. -->
+    <script>
+      (function () {
+        var m = location.pathname.match(/^\/(cards)(?=\/|$)/)
+        if (!m) return
+        var b = document.createElement('base')
+        b.href = '/' + m[1] + '/'
+        document.head.insertBefore(b, document.head.firstChild)
+      })()
+    </script>
+    <link rel="icon" type="image/png" sizes="32x32" href="./32x32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="./64x64.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="./128x128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="./256x256.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="./512x512.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#e74c3c">
     <title>Card Game Scorer</title>

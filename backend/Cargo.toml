@@ -15,4 +15,5 @@ log = "0.4"
 env_logger = "0.11"
 sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "json", "uuid", "chrono"] }
 thiserror = "1.0"
+futures-util = "0.3"
 lettre = { version = "0.11", default-features = false, features = ["tokio1-rustls-tls", "builder", "smtp-transport"] }

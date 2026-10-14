@@ -17,8 +17,19 @@ import type {
   PlayerSettings,
   EmailDailyStats
 } from '../types'
+import { installDemoAdapter } from '../demo/adapter'
+import { cardsDemoHandler } from '../demo/handlers'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api'
+function resolveApiBase(): string {
+  if (import.meta.env.VITE_API_URL) return import.meta.env.VITE_API_URL as string
+  if (typeof window !== 'undefined') {
+    const m = window.location.pathname.match(/^\/(cards)(?=\/|$)/)
+    if (m) return `/${m[1]}/api`
+  }
+  return '/api'
+}
+
+const API_BASE_URL = resolveApiBase()
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -26,6 +37,8 @@ const api = axios.create({
     'Content-Type': 'application/json'
   }
 })
+
+installDemoAdapter(api, { handler: cardsDemoHandler })
 
 export const gamesApi = {
   async getGames(): Promise<Game[]> {

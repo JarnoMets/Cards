@@ -59,5 +59,15 @@
   },
   "footer": {
     "bugPrompt": "Bug gevonden?"
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "body": "Die pagina bestaat niet. Ga terug naar de spelselectie om verder te bladeren."
+  },
+  "demoReadonly": {
+    "eyebrow": "Alleen-lezen demo",
+    "title": "Deze actie is hier niet beschikbaar",
+    "body": "De publieke demo is alleen om te bekijken. Spellen starten, scores bewerken en andere schrijfacties zijn op deze host geblokkeerd.",
+    "dismiss": "Begrepen"
   }
 }

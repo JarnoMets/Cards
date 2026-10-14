@@ -59,5 +59,15 @@
   },
   "footer": {
     "bugPrompt": "Found a bug?"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "That page doesn’t exist. Head back to the game selection to keep browsing."
+  },
+  "demoReadonly": {
+    "eyebrow": "Read-only demo",
+    "title": "This action isn’t available here",
+    "body": "The public demo is browse-only. Starting games, editing scores, and other write actions are blocked on this host.",
+    "dismiss": "Got it"
   }
 }

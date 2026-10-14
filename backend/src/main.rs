@@ -4,6 +4,7 @@ use std::sync::Arc;
 use tokio::sync::RwLock;
 
 mod db;
+mod demo_guard;
 mod models;
 mod notifications;
 mod routes;
@@ -69,6 +70,7 @@ async fn main() -> std::io::Result<()> {
 
         App::new()
             .wrap(cors)
+            .wrap(demo_guard::DemoReadonly)
             .app_data(app_state.clone())
             .service(
                 web::scope("/api")
